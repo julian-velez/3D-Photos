@@ -1,0 +1,48 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111; /* Fondo oscuro para resaltar las fotos */
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor de la galería de fotos */
+.photo-gallery {
+    display: flex;
+    gap: 30px; /* Aumentamos el espacio entre las fotos */
+    perspective: 1800px; /* Aumentamos la perspectiva para mejorar el efecto 3D */
+}
+
+/* Estilos para las fotos */
+.photo {
+    width: 500px;  /* Aumentamos el ancho de la foto */
+    height: 350px; /* Aumentamos la altura de la foto */
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+/* Efecto de rotación en 3D */
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Ajustamos los bordes redondeados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra más marcada para mayor realismo */
+    transition: transform 0.5s ease;
+}
+
+/* Efecto hover para acostar las fotos */
+.photo:hover {
+    transform: rotateX(45deg) rotateY(-20deg); /* Mayor rotación en el eje Y */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); /* Sombra más profunda */
+}
+
+/* Sombra animada al pasar el cursor */
+.photo:hover img {
+    transform: scale(1.1); /* Mayor ampliación al hacer hover */
+}
